@@ -21,6 +21,7 @@ namespace Project5
 				int i = 0;
 				Plan plan = new Plan();
 
+
 				while (true)
 				{
 					Console.Write($"Task #{++i}: ");
@@ -32,13 +33,13 @@ namespace Project5
 					plan.AddTask(new Task(input));
 				}
 
-				var calculatedTime = plan.CalculateTime();
+				Bucket bucket = plan.Simulate();
+				var calculatedTime = bucket.CalculateTime();
 				Console.WriteLine($"After probing {plan.NumberOfIterations} random plans, the results are:");
 				Console.WriteLine($"Minimum = {calculatedTime.Item1} days");
 				Console.WriteLine($"Maximum = {calculatedTime.Item2} days");
 				Console.WriteLine($"Average = {calculatedTime.Item3} days");
 
-				Bucket bucket = plan.Simulate();
 				Console.WriteLine("Probability of finishing the plan in:\n" + bucket);
 
 				bucket.ToAccumulated();

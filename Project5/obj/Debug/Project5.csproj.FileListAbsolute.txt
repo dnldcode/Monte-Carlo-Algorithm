@@ -4,3 +4,9 @@ C:\Users\Donald\source\repos\Project5\Project5\bin\Debug\Project5.pdb
 C:\Users\Donald\source\repos\Project5\Project5\obj\Debug\Project5.csprojAssemblyReference.cache
 C:\Users\Donald\source\repos\Project5\Project5\obj\Debug\Project5.exe
 C:\Users\Donald\source\repos\Project5\Project5\obj\Debug\Project5.pdb
+C:\Users\Donald\Desktop\Computational Methods\Project5\Project5\bin\Debug\Project5.exe.config
+C:\Users\Donald\Desktop\Computational Methods\Project5\Project5\bin\Debug\Project5.exe
+C:\Users\Donald\Desktop\Computational Methods\Project5\Project5\bin\Debug\Project5.pdb
+C:\Users\Donald\Desktop\Computational Methods\Project5\Project5\obj\Debug\Project5.csprojAssemblyReference.cache
+C:\Users\Donald\Desktop\Computational Methods\Project5\Project5\obj\Debug\Project5.exe
+C:\Users\Donald\Desktop\Computational Methods\Project5\Project5\obj\Debug\Project5.pdb

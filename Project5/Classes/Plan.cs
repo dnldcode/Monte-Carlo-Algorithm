@@ -49,7 +49,7 @@ namespace Project5.Classes
 					//randomPlanCost += task.GetRandomEstimate();
 					randomPlanCost = random.Next(values.Item1, values.Item2 + 1);
 				}
-				Console.WriteLine(randomPlanCost);
+				//Console.WriteLine(randomPlanCost);
 				bucket.addValueToBucket(randomPlanCost);
 
 				totalCostOfRandomPlans += randomPlanCost;

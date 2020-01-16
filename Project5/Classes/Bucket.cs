@@ -9,6 +9,7 @@ namespace Project5.Classes
 	class Bucket
 	{
 		public Dictionary<int, int> buckets = new Dictionary<int, int>();
+		private List<int> values = new List<int>();
 		private int bucketCount;
 		private int rangeLow;
 		private int rangeHigh;
@@ -36,6 +37,12 @@ namespace Project5.Classes
 		{
 			int idx = this.getBucketIdxForValue(val);
 			this.buckets[this.buckets.ElementAt(idx).Key]++;
+			values.Add(val);
+		}
+
+		public (int, int, int) CalculateTime()
+		{
+			return (this.values.Min(), this.values.Max(), (int)this.values.Average());
 		}
 
 		public int getBucketIdxForValue(int val)
