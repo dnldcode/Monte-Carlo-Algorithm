@@ -12,7 +12,7 @@ namespace Project5.Classes
 	{
 		List<Task> tasks = new List<Task>();
 		Random random = new Random();
-		public int NumberOfIterations { get; set; } = 1000;
+		public int NumberOfIterations { get; set; } = 10000;
 
 		public void AddTask(Task task)
 		{
@@ -39,16 +39,15 @@ namespace Project5.Classes
 			var values = CalculateTime();
 			int dif = (values.Item2 - values.Item1);
 			int div = (dif / 10);
+			if (dif == 0 && div == 0) dif = div = 1;
 			Bucket bucket = new Bucket(dif / (div != 0 ? div : 1), values.Item1, values.Item2, this.NumberOfIterations);
 
 			for (int i = 0; i < NumberOfIterations; i++)
 			{
 				int randomPlanCost = 0;
 				foreach (Task task in tasks)
-				{
-					//randomPlanCost += task.GetRandomEstimate();
-					randomPlanCost = random.Next(values.Item1, values.Item2 + 1);
-				}
+					randomPlanCost += task.GetRandomEstimate();
+
 				//Console.WriteLine(randomPlanCost);
 				bucket.addValueToBucket(randomPlanCost);
 

@@ -21,7 +21,6 @@ namespace Project5
 				int i = 0;
 				Plan plan = new Plan();
 
-
 				while (true)
 				{
 					Console.Write($"Task #{++i}: ");
@@ -45,10 +44,8 @@ namespace Project5
 				bucket.ToAccumulated();
 
 				Console.WriteLine("Accumulated probability of finishing the plan in or before:\n" + bucket);
-
-
 			}
-			catch (ArgumentNullException e)
+			catch (Exception e)
 			{
 				Console.WriteLine("Error occured: " + e.Message);
 			}

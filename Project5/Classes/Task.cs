@@ -8,9 +8,11 @@ namespace Project5.Classes
 {
 	class Task
 	{
+		private List<int> estimations = new List<int>();
 		public int WorstCase { get; }
 		public int AverageCase { get; }
 		public int BestCase { get; }
+		private Random random = new Random();
 
 		public Task(int bestCase, int averageCase, int worstCase)
 		{
@@ -23,29 +25,22 @@ namespace Project5.Classes
 		{
 			input = input.Trim();
 
-			int[] values = input.Split(',').Select(Int32.Parse).ToArray();
+			estimations = input.Split(',').Select(Int32.Parse).ToList();
 
-			if (values.Length != 3 || values[1] <= values[0] || values[2] <= values[1])
+			if (estimations.Count != estimations.Distinct().ToList().Count)
+				throw new Exception("Inable to create task. Estimations could not repeat.");
+
+			if (estimations.Count < 1)
 				throw new Exception("Invalid input provided while creating object Task");
 
-			this.BestCase = values[0];
-			this.AverageCase = values[1];
-			this.WorstCase = values[2];
+			this.BestCase = estimations.Min();
+			this.AverageCase = (int)estimations.Average();
+			this.WorstCase = estimations.Max();
 		}
 
 		public int GetRandomEstimate()
 		{
-			switch(new Random().Next(0,3))
-			{
-				case 0:
-					return WorstCase;
-				case 1:
-					return AverageCase;
-				case 2:
-					return BestCase;
-			}
-
-			throw new Exception("??");
+			return estimations[random.Next(0, estimations.Count)];
 		}
 	}
 }
